@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import SearchPage from "./pages/SearchPage";
 import CareerPage from "./pages/CareerPage";
 import GamelogPage from "./pages/GamelogPage";
-import LeadersPage from "./pages/LeadersPage";
 import PredictPage from "./pages/PredictPage";
 import PicksPage from "./pages/PicksPage";
 import "./index.css";
@@ -34,7 +33,6 @@ export default function App() {
             <Route path="/"        element={<SearchPage />} />
             <Route path="/career"  element={<CareerPage />} />
             <Route path="/gamelog" element={<GamelogPage />} />
-            <Route path="/leaders" element={<LeadersPage />} />
             <Route path="/predict" element={<PredictPage />} />
             <Route path="/picks"   element={<PicksPage />} />
           </Routes>
