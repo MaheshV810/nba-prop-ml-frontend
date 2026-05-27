@@ -20,5 +20,11 @@ export function useAsync() {
     }
   }, []);
 
-  return { data, loading, error, run };
+  const reset = useCallback(() => {
+    setData(null);
+    setError(null);
+    setLoading(false);
+  }, []);
+
+  return { data, loading, error, run, reset };
 }
