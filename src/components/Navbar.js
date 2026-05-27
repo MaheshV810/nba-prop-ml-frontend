@@ -5,7 +5,6 @@ const links = [
   { to: "/",        label: "Search" },
   { to: "/career",  label: "Career" },
   { to: "/gamelog", label: "Game Log" },
-  { to: "/leaders", label: "Leaders" },
   { to: "/predict", label: "Predict 🤖" },
   { to: "/picks",   label: "Best Picks 🔥" },
 ];
