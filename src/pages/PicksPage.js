@@ -122,7 +122,7 @@ function PickCard({ pick, rank }) {
         <div style={{
           display: "inline-block",
           marginTop: "6px",
-          background: isOver ? "rgba(34,197,94,0.12)" : "rgba(239,68,68,0.12)",
+          background: isOver ? "rgba(34,197,94,0.15)" : "rgba(239,68,68,0.15)",
           color: isOver ? "var(--green)" : "var(--red)",
           border: `1px solid ${isOver ? "rgba(34,197,94,0.3)" : "rgba(239,68,68,0.3)"}`,
           borderRadius: "20px",
