@@ -12,7 +12,12 @@ const CURRENT_SEASON = currentSeason();
 const BASE = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
 async function request(path) {
-  const res = await fetch(`${BASE}${path}`);
+  const res = await fetch(`${BASE}${path}`, {
+    headers: {
+      "ngrok-skip-browser-warning": "true",
+      "Content-Type": "application/json",
+    },
+  });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(err.detail || `Request failed: ${res.status}`);
@@ -33,8 +38,8 @@ export const api = {
     request(`/league/leaders?stat_category=${statCategory}&top=${top}&season=${season}`),
   predict: (name) =>
     request(`/predict/${encodeURIComponent(name)}`),
-  bestPicks: (minEdge = 1.5, top = 10) =>
-    request(`/picks/today?min_edge=${minEdge}&top=${top}`),
+  bestPicks: (minEdge = 1.5, top = 10, forceRefresh = false) =>
+    request(`/picks/today?min_edge=${minEdge}&top=${top}&force_refresh=${forceRefresh}`),
 };
 
 export { CURRENT_SEASON };
